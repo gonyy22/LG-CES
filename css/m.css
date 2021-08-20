@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+html{font-size:15px}
+
+.copyright{margin-top:15px}
+.links-right{margin:20px -24px -24px;}
+.links-right a[data-link-area=footer-jeongdo_management]{width:100%;padding:18px 10px 0 80px; border-radius:0; background-position: 14px 50%; }
+
+/* teaser */
+#teaser{padding-bottom: 50px}
+#teaser section{width:73.5vw;height:113vw; background-image: url(../img/teaser/title-m.svg?v=2);}
+
+@media screen and (max-width:413px){
+	
+}
