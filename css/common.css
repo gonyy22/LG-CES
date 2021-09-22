@@ -95,7 +95,7 @@ h1 img{display: block}
 #gnb li{float: left;margin-right: 100px;}
 #gnb a{display: block;padding:5px 0; font-size:16px}
 #gnb a:hover,#gnb a:focus,#gnb .active{color:#A40034}
-.hd-rt{float: right;margin-top: -9px;}
+.hd-rt{margin-top: -9px; position:absolute; right:20px; }
 .hd-rt>*{ margin-left: 15px;}
 .btn-newsroom{display: inline-block;width:92px;height:32px;border:1px solid #ccc;border-radius:9em;text-align: center;font-size:14px; line-height: 32px; color:#999;}
 #ft{min-height:102px; padding:22px 24px;background:#333;font-size:14px;color:#fff}
