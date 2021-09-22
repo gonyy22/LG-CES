@@ -21,8 +21,6 @@ $window.on("load", function () {
     });
     layout();
     film();
-    music();
-    lookbook();
 });
 function film() {
     // mask init
@@ -69,7 +67,7 @@ function film() {
         winSc,
         contArrH = [],
         contCount = [],
-        contList = [],
+        contList = [], 
         bin = [],
         cont = [];
 
@@ -117,131 +115,3 @@ function layout() {
         }
     })
 }
-
-// function music() {
-//     // mask init
-//     var maskImg_w = 925,
-//        maskImg_h = 520;
-//     if($window.width() < 1600){
-//         maskImg_w = 800;
-//         maskImg_h = 450
-//     }
-//     // //mask init
-//     var controller = new ScrollMagic.Controller({
-//         tweenChanges: true
-//     });
-//
-//     var $music = $(".music_container"),
-//        $maskScroll = $music.find("#musicMaskScroll"),
-//        $maskSVG = $maskScroll.find(".svg_wrap"),
-//        $maskimg = $maskScroll.find(".svg_bg"),
-//        $filmTxt = $maskScroll.find(".txt_wrap");
-//
-//     $maskimg.css({"top":"-" + $filmTxt.height() + "px"})
-//
-//     var maskMask_1 = TweenMax.to($maskSVG, .3, {left:"62.5%", top:"50%", scale:5}),
-//        maskMask_2 = TweenMax.to($maskSVG, .5, {left:"230%", top:"65%", scale:80, display:"none", opacity:0 }), // 78
-//        maskImg = TweenMax.to($maskimg, .4, {width:maskImg_w, height:maskImg_h, top:"0"}),
-//        maskDelay = TweenMax.to($maskimg, .1, {delay:.1});
-//
-//     var _maskTime = new TimelineMax();
-//     _maskTime.add(maskMask_1).add(maskMask_2).add(maskImg).add(maskDelay);
-//
-//     var sceneMask = new ScrollMagic.Scene({
-//         triggerElement: "#musicMaskScroll",
-//         duration:1000,
-//         triggerHook:0
-//     })
-//        .setPin("#musicMaskScroll")
-//        .setTween(_maskTime)
-//        .addTo(controller);
-//
-//     var winH = $(window).height(),
-//        winSc,
-//        contArrH = [],
-//        contCount = [],
-//        contList = [],
-//        bin = [],
-//        cont = [],
-//        titleArrH = [];
-//
-//     $(".step_box").each(function () {
-//         contArrH.push($(this).offset().top - winH/2 - 300 );
-//         titleArrH.push($(this).offset().top - winH/2 + 100 );
-//         cont.push($(this));
-//         contCount.push($(this).find(".cont").length);
-//         contList.push($(this).find(".cont"));
-//     });
-//
-//     function scrollAct() {
-//         winSc = $(document).scrollTop();
-//         for ( var i = 0; i < contArrH.length; i++ ) {
-//             if ( winSc >= contArrH[i] ) {
-//                 bin = [];
-//                 for (var temp = 0; temp < contCount[i]; temp++) {
-//                     bin.push(contList[i][temp]);
-//                 }
-//                 TweenMax.staggerTo(bin, .65, {transform: "translate3d(0,0,0)", opacity: 1}, .2);
-//                 TweenMax.staggerTo($(bin).find(".mask-wrap"), 1, {width: "100%", height: "100%", delay:.4, ease:Power4.easeOut}, .25);
-//             } else if ( winSc >= contArrH[2] ) {
-//                 TweenMax.staggerTo($(".music_wrap02").find(".mask-wrap"), 1, {width: "100%", height: "100%", ease:Power4.easeOut});
-//             }
-//         }
-//     }
-//
-//     function textAni() {
-//         var $txtAni = $(".txt-ani"),
-//            _txtAniTop = $txtAni.offset().top,
-//            _txtAniSt = _txtAniTop - winH/2 -300;
-//
-//         if ( winSc >= _txtAniSt ) {
-//             TweenMax.to($(".music_wrap02 .cont02 h2 em"), .8, { delay:.2,width: "100%",ease: Power3.easeOut });
-//             TweenMax.to($(".music_wrap02 .cont02 h2 span"), .8, { delay:.2, opacity: 1,ease: Power3.easeOut });
-//             TweenMax.to($(".music_wrap02 .music_step02 .cont05 h2 em"), 1.1, { delay:.7,width: "100%",ease: Power3.easeOut });
-//             TweenMax.to($(".music_wrap02 .music_step02 .cont05 h2 span"), .8, { delay:.7,opacity: 1,ease: Power3.easeOut });
-//         }
-//     }
-//
-//     function titTwist() {
-//         for ( var i = 0; i < titleArrH.length; i++ ) {
-//             if ( winSc >= titleArrH[i] ) {
-//                 cont[i].find(".title_txt").addClass("left_twist");
-//             }
-//             else {
-//                 cont[i].find(".title_txt").removeClass("left_twist");
-//             }
-//
-//             if ( winSc >= titleArrH[4]  ) {
-//                 cont[4].find(".title_txt").addClass("right_twist");
-//             } else {
-//                 cont[4].find(".title_txt").removeClass("right_twist");
-//             }
-//
-//             if ( winSc >= titleArrH[8] ) {
-//                 cont[8].find(".title_txt").addClass("left_twist");
-//             } else {
-//                 cont[8].find(".title_txt").removeClass("left_twist");
-//             }
-//
-//             if ( winSc >= titleArrH[9] ) {
-//                 cont[9].find(".title_txt").addClass("weak_twist");
-//             } else {
-//                 cont[9].find(".title_txt").removeClass("weak_twist");
-//             }
-//         }
-//     }
-//
-//     var $wrap = $("#wrap");
-//     var pageChk = $wrap.find(".music_container").length;
-//     if(pageChk > 0){
-//
-//         $(window).on("scroll", function () {
-//             scrollAct();
-//             textAni();
-//             titTwist();
-//         });
-//         scrollAct();
-//         textAni();
-//         titTwist();
-//     }
-// }
